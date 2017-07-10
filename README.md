@@ -27,7 +27,7 @@ import { LongPressModule } from 'ionic-long-press';
 
 And use in your template:
 ```html
-<button ion-button ion-long-press [interval]="400" (onPressStart)="pressed()" (onPressing)="active()" (onPressEnd)="released()"></button>Ï
+<button ion-button ion-long-press [interval]="400" (onPressStart)="pressed()" (onPressing)="active()" (onPressEnd)="released()"></button>
 ```
 
 ### API
