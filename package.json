@@ -1,6 +1,6 @@
 {
   "name": "ionic-long-press",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A little plugin to add long-press events to ionic components",
   "main": "dist/index",
   "repository": {
