@@ -31,6 +31,8 @@ And use in your template:
 ```
 
 ### API
+| Item | Description |
+|------| ---------- |
 `ion-long-press` | Directive to include the press event outputs.
 `[interval]` | Number. Allows you to set the interval at which the `onPressing` event will fire. Default `500`.
 `(onPressStart)` | Event fired when the element is initially pressed.
