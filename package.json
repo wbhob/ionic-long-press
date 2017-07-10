@@ -1,0 +1,27 @@
+{
+  "name": "ionic-long-press",
+  "version": "1.0.0",
+  "description": "A little plugin to add long-press events to ionic components",
+  "main": "dist/index",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wbhob/ionic-long-press.git"
+  },
+  "author": "Wilson Hobbs",
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/core": ">=2.0.0",
+    "ionic-angular": ">=2.0.0",
+    "rxjs": ">=5.0.0",
+    "zone.js": ">=0.7.0"
+  },
+  "devDependencies": {
+    "@angular/common": "^4.2.6",
+    "@angular/compiler": ">=4.0.0",
+    "@angular/compiler-cli": ">=4.0.0",
+    "@angular/forms": ">=4.0.0",
+    "@angular/platform-browser": "^4.2.6",
+    "@types/systemjs": "^0.20.2",
+    "typescript": ">=2.1.0"
+  }
+}
