@@ -1,71 +1,30 @@
-// {
-//     "compilerOptions": {
-//         "target": "es5",
-//         "module": "es2015",
-//         "moduleResolution": "node",
-//         "declaration": true,
-//         "sourceMap": true,
-//         "emitDecoratorMetadata": true,
-//         "experimentalDecorators": true,
-//         "lib": [
-//             "es2015",
-//             "dom"
-//         ],
-//         "noImplicitAny": true,
-//         "suppressImplicitAnyIndexErrors": true,
-//         "typeRoots": [
-//             "./node_modules/@types/"
-//         ],
-//         "outDir": "./build",
-//         "rootDir": "./src"
-//     },
-//     "include": [
-//         "src/**/*.ts"
-//     ],
-//     "exclude": [
-//         "node_modules"
-//     ],
-//     "compileOnSave": false,
-//     "buildOnSave": false,
-//     "angularCompilerOptions": {
-//         "genDir": "dist",
-//         "entryModule": "src/long-press.module#LongPressModule",
-//         "annotationsAs": "static fields",
-//         "annotateForClosureCompiler": true,
-//         "strictMetadataEmit": true
-//     }
-// }
 {
-    "compilerOptions": {
-        "module": "es2015",
-        "target": "es5",
-        "moduleResolution": "node",
-        "sourceMap": false,
-        "declaration": true,
-        "removeComments": false,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "noImplicitAny": true,
-        "listFiles": false,
-        "noLib": false,
-        "outDir": "dist",
-        "noUnusedLocals": true,
-        "lib": [
-            "es2015",
-            "dom"
-        ],
-        "strictNullChecks": true,
-        "skipLibCheck": true,
-        "baseUrl": ".",
-        "paths": {
-            "@angular/*": [
-                "../node_modules/@angular/*"
-            ]
-        }
-    },
-    "exclude": [
-        "node_modules",
-        "bundles",
-        "dist"
-    ]
+  "compilerOptions": {
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmitOnError": false,
+    "noImplicitAny": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "sourceMap": true,
+    "target": "es5",
+    "inlineSources": true
+  },
+  "angularCompilerOptions": {
+    "strictMetadataEmit": true,
+    "skipTemplateCodegen": true
+  },
+  "files": [
+    "index.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
