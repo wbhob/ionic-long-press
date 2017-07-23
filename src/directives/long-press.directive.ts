@@ -31,7 +31,7 @@ export class LongPressDirective implements OnInit, OnDestroy {
         }
         this.pressGesture = new Gesture(this.el);
         this.pressGesture.listen();
-        this.pressGesture.on('press', e => {
+        this.pressGesture.on('press', (e: any) => {
             this.onPressStart.emit(e);
             this.zone.run(() => {
                 this.int = setInterval(() => {
@@ -40,7 +40,7 @@ export class LongPressDirective implements OnInit, OnDestroy {
             });
         });
 
-        this.pressGesture.on('pressup', e => {
+        this.pressGesture.on('pressup', (e: any) => {
             this.zone.run(() => {
                 clearInterval(this.int);
             });

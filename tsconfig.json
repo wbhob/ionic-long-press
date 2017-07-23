@@ -1,41 +1,71 @@
+// {
+//     "compilerOptions": {
+//         "target": "es5",
+//         "module": "es2015",
+//         "moduleResolution": "node",
+//         "declaration": true,
+//         "sourceMap": true,
+//         "emitDecoratorMetadata": true,
+//         "experimentalDecorators": true,
+//         "lib": [
+//             "es2015",
+//             "dom"
+//         ],
+//         "noImplicitAny": true,
+//         "suppressImplicitAnyIndexErrors": true,
+//         "typeRoots": [
+//             "./node_modules/@types/"
+//         ],
+//         "outDir": "./build",
+//         "rootDir": "./src"
+//     },
+//     "include": [
+//         "src/**/*.ts"
+//     ],
+//     "exclude": [
+//         "node_modules"
+//     ],
+//     "compileOnSave": false,
+//     "buildOnSave": false,
+//     "angularCompilerOptions": {
+//         "genDir": "dist",
+//         "entryModule": "src/long-press.module#LongPressModule",
+//         "annotationsAs": "static fields",
+//         "annotateForClosureCompiler": true,
+//         "strictMetadataEmit": true
+//     }
+// }
 {
     "compilerOptions": {
-        "allowUnreachableCode": false,
+        "module": "es2015",
+        "target": "es5",
+        "moduleResolution": "node",
+        "sourceMap": false,
         "declaration": true,
+        "removeComments": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "lib": [
-            "dom",
-            "es2015"
-        ],
+        "noImplicitAny": true,
+        "listFiles": false,
+        "noLib": false,
         "outDir": "dist",
-        "module": "commonjs",
-        "moduleResolution": "node",
-        // "noImplicitAny": true,
-        // "noUnusedLocals": true,
-        // "noUnusedParameters": true,
-        "removeComments": false,
-        "sourceMap": true,
-        "target": "es2015",
-        "typeRoots": [
-            "./node_modules/@types"
+        "noUnusedLocals": true,
+        "lib": [
+            "es2015",
+            "dom"
         ],
-        "types": [
-            "systemjs"
-        ],
-        "listEmittedFiles": true
+        "strictNullChecks": true,
+        "skipLibCheck": true,
+        "baseUrl": ".",
+        "paths": {
+            "@angular/*": [
+                "../node_modules/@angular/*"
+            ]
+        }
     },
-    "include": [
-        "src/**/*.ts"
-    ],
     "exclude": [
-        "node_modules"
-    ],
-    "compileOnSave": false,
-    "buildOnSave": false,
-    "angularCompilerOptions": {
-        "strictMetadataEmit": true,
-        "genDir": "dist",
-        "basePath": "src"
-    }
+        "node_modules",
+        "bundles",
+        "dist"
+    ]
 }
