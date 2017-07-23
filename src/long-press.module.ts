@@ -11,10 +11,4 @@ import { LongPressDirective } from './directives/long-press.directive';
     providers: [Gesture],
     exports: [LongPressDirective, CommonModule]
 })
-export class øLongPressModule { }
-
-@NgModule({
-    imports: [øLongPressModule],
-    exports: [øLongPressModule]
-})
 export class LongPressModule { }
