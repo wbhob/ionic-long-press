@@ -1,6 +1,6 @@
 {
   "name": "ionic-long-press",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A little plugin to add long-press events to ionic components",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
