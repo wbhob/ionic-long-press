@@ -8,7 +8,6 @@ import { LongPressDirective } from './directives/long-press.directive';
         CommonModule
     ],
     declarations: [LongPressDirective],
-    providers: [Gesture],
-    exports: [LongPressDirective, CommonModule]
+    exports: [LongPressDirective]
 })
 export class LongPressModule { }
