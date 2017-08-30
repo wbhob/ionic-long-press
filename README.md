@@ -1,9 +1,6 @@
 # Ionic Long Press
 Say you need to increment something quickly while pushing a button. Or something. This directive intends to build upon the existing Hammer.JS `press` event that Ionic uses for long pressing, by giving you interval emission.
 
-## NOTE FOR AOT (PROD)
-If you are getting an error when building for prod, please try to import the directive and add it to `declarations`, and remove the reference to the module. I am working to resolve this issue as soon as possible.
-
 ### Compatibility
 This plugin should be compatible with Ionic and Angular 2+. It was tested with Ionic 3.5.0 and Angular 4.1.3, but the APIs have not changed since Angular 2 final. If this compatibility information is wrong, please open an issue.
 
