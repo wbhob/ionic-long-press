@@ -15,7 +15,7 @@ export class LongPressDirective implements OnInit, OnDestroy {
     el: HTMLElement;
     pressGesture: Gesture;
 
-    int: any;
+    int: number;
 
     constructor(
         public zone: NgZone,
@@ -29,30 +29,52 @@ export class LongPressDirective implements OnInit, OnDestroy {
         if (this.interval < 40) {
             throw new Error('A limit of 40ms is imposed so you don\'t destroy device performance. If you need less than a 40ms interval, please file an issue explaining your use case.');
         }
+
         this.pressGesture = new Gesture(this.el);
         this.pressGesture.listen();
         this.pressGesture.on('press', (e: any) => {
             this.onPressStart.emit(e);
-            this.zone.run(() => {
-                this.int = setInterval(() => {
-                    this.onPressing.emit();
-                }, this.interval);
-            });
+            this.clearInt();
+            this.int = setInterval(() => {
+                this.onPressing.emit();
+            }, this.interval);
         });
 
         this.pressGesture.on('pressup', (e: any) => {
-            this.zone.run(() => {
-                clearInterval(this.int);
-            });
-            this.onPressEnd.emit();
+            this.pressEnd();
+        });
+
+        this.pressGesture.on('pan', (e: any) => {
+            this.pressEnd();
+        });
+
+        this.pressGesture.on('release', (e: any) => {
+            this.pressEnd();
+        });
+
+        this.el.addEventListener('mouseleave', (e: any) => {
+            this.pressEnd();
+        });
+
+        this.el.addEventListener('mouseout', (e: any) => {
+            this.pressEnd();
         });
     }
 
-    ngOnDestroy() {
-        this.zone.run(() => {
+    clearInt() {
+        if (this.int !== undefined) {
             clearInterval(this.int);
-        });
+            this.int = undefined;
+        }
+    }
+
+    pressEnd() {
+        this.clearInt();
         this.onPressEnd.emit();
+    }
+
+    ngOnDestroy() {
+        this.pressEnd();
         this.pressGesture.destroy();
     }
 }
