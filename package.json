@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "ionic-long-press",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "A little plugin to add long-press events to ionic components",
   "main": "./dist/index",
   "typings": "./dist/index.d.ts",
@@ -33,5 +33,6 @@
     "lib": {
       "entryFile": "src/index.ts"
     }
-  }
+  },
+  "dependencies": {}
 }

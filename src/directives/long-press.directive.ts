@@ -1,4 +1,4 @@
-import { Directive, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, NgZone } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, Input, NgZone, OnDestroy, OnInit, Output } from '@angular/core';
 import { Gesture } from 'ionic-angular/gestures/gesture';
 
 @Directive({
@@ -37,7 +37,7 @@ export class LongPressDirective implements OnInit, OnDestroy {
             this.clearInt();
             this.int = setInterval(() => {
                 this.onPressing.emit();
-            }, this.interval);
+            }, this.interval) as any;
         });
 
         this.pressGesture.on('pressup', (e: any) => {
