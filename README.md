@@ -9,7 +9,7 @@ This plugin should be compatible with Ionic and Angular 7+. It was tested with I
 ### Installation
 
 ```sh
-npm install --save ionic4-long-press
+npm install --save ionic-long-press
 ```
 
 ### Include HammerJs in your Ionic project
