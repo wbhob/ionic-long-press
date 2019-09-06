@@ -7,27 +7,27 @@
   "typings": "./dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wbhob/ionic-long-press.git"
+    "url": "https://github.com/RobinGiel/ionic-long-press.git"
   },
   "scripts": {
     "build": "ng-packagr -p package.json"
   },
-  "author": "Wilson Hobbs",
+  "author": "Robin Giel",
   "license": "MIT",
   "peerDependencies": {
-    "@angular/core": "5.2",
-    "ionic-angular": "3.9.2"
+    "@angular/core": "7.2.2",
+    "@ionic/angular": "4.6.1"
   },
   "devDependencies": {
-    "@angular/common": "5.2.11",
-    "@angular/compiler": "5.2.11",
-    "@angular/compiler-cli": "5.2.11",
-    "@angular/core": "5.2.11",
-    "ionic-angular": "3.9.2",
+    "@angular/common": "7.2.2",
+    "@angular/compiler": "7.2.2",
+    "@angular/compiler-cli": "7.2.2",
+    "@angular/core": "7.2.2",
+    "@ionic/angular": "4.6.1"
     "ng-packagr": "^3.0.2",
-    "rxjs": "5.5.2",
-    "typescript": "2.8.3",
-    "zone.js": "0.8.18"
+    "rxjs": "6.5.2",
+    "typescript": "3.1.6",
+    "zone.js": "0.8.29"
   },
   "ngPackage": {
     "lib": {
