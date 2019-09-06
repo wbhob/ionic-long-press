@@ -5,7 +5,7 @@ const LONG_PRESS_DEFAULT_TIMEOUT = 500;
 const MIN_LONG_PRESS_TIMEOUT = 40;
 
 @Directive({
-  selector: '[LongPressDirective]',
+  selector: '[ion-long-press]',
 })
 export class LongPressDirective implements OnInit, OnDestroy {
 
