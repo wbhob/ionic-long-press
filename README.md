@@ -8,6 +8,60 @@ This plugin should be compatible with Ionic and Angular 7+. It was tested with I
 ```sh
 npm install --save ionic4-long-press
 ```
+### Include HammerJs in your Ionic project
+step 1:
+```sh
+npm install --save hammerjs @types/hammerjs
+```
+step 2:
+
+import HammerJs in src/main.ts. i.e import 'hammerjs'; // HAMMER TIME
+
+step 3:
+
+Create a IonicGestureConfig.ts file in your utils folder and include this:
+```ts
+import {Injectable} from '@angular/core';
+import {HammerGestureConfig} from '@angular/platform-browser';
+
+/**
+ * @hidden
+ * This class overrides the default Angular gesture config.
+ */
+@Injectable()
+export class IonicGestureConfig extends HammerGestureConfig {
+    buildHammer(element: HTMLElement) {
+        const mc = new (<any> window).Hammer(element);
+
+        for (const eventName in this.overrides) {
+            if (eventName) {
+                mc.get(eventName).set(this.overrides[eventName]);
+            }
+        }
+
+        return mc;
+    }
+
+}
+```
+
+step 4:
+In your app.module.ts import {IonicGestureConfig} from "../utils/IonicGestureConfig";
+and add to provider:
+```ts
+
+@NgModule({
+  imports: [
+    ...
+  ],
+  declarations: [
+    ...,
+  ],
+  providers: [{provide: HAMMER_GESTURE_CONFIG, useClass: IonicGestureConfig}],
+})
+export class MyModule {
+}
+```
 
 ### Usage
 The directive should work on any HTML element.
