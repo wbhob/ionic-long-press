@@ -23,7 +23,7 @@
     "@angular/compiler": "7.2.2",
     "@angular/compiler-cli": "7.2.2",
     "@angular/core": "7.2.2",
-    "@ionic/angular": "4.6.1"
+    "@ionic/angular": "4.6.1",
     "ng-packagr": "^3.0.2",
     "rxjs": "6.5.2",
     "typescript": "3.1.6",
