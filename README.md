@@ -19,7 +19,7 @@ import HammerJs in src/main.ts. i.e import 'hammerjs'; // HAMMER TIME
 
 step 3:
 
-Create a IonicGestureConfig.ts file in your utils folder and include this:
+Create an IonicGestureConfig.ts file in your utils folder and include this:
 ```ts
 import {Injectable} from '@angular/core';
 import {HammerGestureConfig} from '@angular/platform-browser';
