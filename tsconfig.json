@@ -20,10 +20,10 @@
   "angularCompilerOptions": {
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
-    "genDir": "dist",
+    "genDir": "dist"
   },
   "files": [
-    "./src/index.ts",
+    "./src/index.ts"
   ],
   "exclude": [
     "node_modules"

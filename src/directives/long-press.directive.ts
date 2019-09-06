@@ -1,15 +1,16 @@
-import {Directive, ElementRef, EventEmitter, Input, NgZone, OnDestroy, OnInit, Output} from '@angular/core';
+import { Directive, ElementRef, EventEmitter, Input, NgZone, OnDestroy, OnInit, Output } from '@angular/core';
+import * as Hammer from 'hammerjs';
 
-const LONG_PRESS_DEFAULT_TIMEOUT = 500;
+// const LONG_PRESS_DEFAULT_TIMEOUT = 500;
 
-const MIN_LONG_PRESS_TIMEOUT = 40;
+// const MIN_LONG_PRESS_TIMEOUT = 40;
 
 @Directive({
   selector: '[ion-long-press]',
 })
 export class LongPressDirective implements OnInit, OnDestroy {
 
-  @Input() longPressTimeout: number;
+  @Input() interval: number;
 
   @Output() pressed: EventEmitter<any> = new EventEmitter();
   @Output() longPressed: EventEmitter<any> = new EventEmitter();
@@ -17,7 +18,7 @@ export class LongPressDirective implements OnInit, OnDestroy {
 
   private readonly el: HTMLElement;
   private _hammer: HammerManager;
-  private longPressTimeoutRef: number;
+  private int: number;
 
   constructor(public zone: NgZone,
               el: ElementRef) {
@@ -25,11 +26,9 @@ export class LongPressDirective implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    if (!this.longPressTimeout) {
-      this.longPressTimeout = LONG_PRESS_DEFAULT_TIMEOUT;
-    }
-    if (this.longPressTimeout < MIN_LONG_PRESS_TIMEOUT) {
-      throw new Error('A limit of 40ms is imposed so you don\'t destroy device performance.');
+    if (!this.interval) this.interval = 500;
+    if (this.interval < 40) {
+        throw new Error('A limit of 40ms is imposed so you don\'t destroy device performance. If you need less than a 40ms interval, please file an issue explaining your use case.');
     }
 
     this._hammer = new Hammer.Manager(this.el, {
@@ -47,9 +46,9 @@ export class LongPressDirective implements OnInit, OnDestroy {
     this._hammer.on('press', (e: any) => {
       this.pressed.emit(e);
       this.clearInt();
-      this.longPressTimeoutRef = setTimeout(() => {
+      this.int = setInterval(() => {
         this.longPressed.emit();
-      }, this.longPressTimeout) as any;
+      }, this.interval) as any;
     });
 
     this._hammer.on('pressup', (e: any) => {
@@ -70,9 +69,9 @@ export class LongPressDirective implements OnInit, OnDestroy {
   }
 
   clearInt(): void {
-    if (this.longPressTimeoutRef !== undefined) {
-      clearTimeout(this.longPressTimeoutRef);
-      this.longPressTimeoutRef = undefined;
+    if (this.int !== undefined) {
+        clearInterval(this.int);
+        this.int = undefined;
     }
   }
 

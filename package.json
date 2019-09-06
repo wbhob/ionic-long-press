@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/ng-packagr/package.schema.json",
-  "name": "ionic-long-press",
-  "version": "1.5.0",
+  "name": "ionic4-long-press",
+  "version": "1.0.3",
   "description": "A little plugin to add long-press events to ionic components",
   "main": "./dist/index",
   "typings": "./dist/index.d.ts",
@@ -16,16 +16,20 @@
   "license": "MIT",
   "peerDependencies": {
     "@angular/core": "7.2.2",
-    "@ionic/angular": "4.6.1"
+    "@ionic/angular": "4.6.1",
+    "@types/hammerjs": "^2.0.36",
+    "hammerjs": "^2.0.8"
   },
   "devDependencies": {
     "@angular/common": "7.2.2",
-    "@angular/compiler": "7.2.2",
+    "@angular/compiler": "^7.2.2",
     "@angular/compiler-cli": "7.2.2",
     "@angular/core": "7.2.2",
     "@ionic/angular": "4.6.1",
-    "ng-packagr": "^3.0.2",
+    "awesome-typescript-loader": "^2.2.1",
+    "ng-packagr": "5.5.0",
     "rxjs": "6.5.2",
+    "tsickle": "^0.37.0",
     "typescript": "3.1.6",
     "zone.js": "0.8.29"
   },
@@ -34,5 +38,7 @@
       "entryFile": "src/index.ts"
     }
   },
-  "dependencies": {}
+  "dependencies": {
+
+  }
 }
