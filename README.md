@@ -4,7 +4,7 @@ Say you need to increment something quickly while pushing a button. Or something
 
 ### Compatibility
 
-This plugin should be compatible with Ionic and Angular 7+. It was tested with Ionic 4.6.0 and Angular 7.2.2.
+This plugin should be compatible with Ionic and Angular 7+. It was tested with Ionic 4.11.5 and Angular 8.2.14.
 
 ### Installation
 
@@ -14,23 +14,26 @@ npm install --save ionic-long-press
 
 ### Include HammerJs in your Ionic project
 
-step 1:
+#### Step 1
 
 ```sh
 npm install --save hammerjs @types/hammerjs
 ```
 
-step 2:
+#### Step 2
 
-import HammerJs in src/main.ts. i.e import 'hammerjs'; // HAMMER TIME
+```ts
+// in src/main.ts.
+import 'hammerjs'
+```
 
-step 3:
+#### Step 3
 
 Create an IonicGestureConfig.ts file in your utils folder and include this:
 
 ```ts
-import { Injectable } from "@angular/core";
-import { HammerGestureConfig } from "@angular/platform-browser";
+import { Injectable } from '@angular/core'
+import { HammerGestureConfig } from '@angular/platform-browser'
 
 /**
  * @hidden
@@ -39,22 +42,31 @@ import { HammerGestureConfig } from "@angular/platform-browser";
 @Injectable()
 export class IonicGestureConfig extends HammerGestureConfig {
   buildHammer(element: HTMLElement) {
-    const mc = new (<any>window).Hammer(element);
+    if (window) {
+      const mc = new (<any>window).Hammer(element)
 
-    for (const eventName in this.overrides) {
-      if (eventName) {
-        mc.get(eventName).set(this.overrides[eventName]);
+      for (const eventName in this.overrides) {
+        if (eventName) {
+          mc.get(eventName).set(this.overrides[eventName])
+        }
       }
     }
 
-    return mc;
+    return mc
   }
 }
 ```
 
-step 4:
-In your app.module.ts import {IonicGestureConfig} from "../utils/IonicGestureConfig";
-and add to provider:
+#### Step 4
+
+```ts
+// in app.module.ts
+import { IonicGestureConfig } from '../utils/IonicGestureConfig'
+```
+
+#### Step 5
+
+Add to provider:
 
 ```ts
 
@@ -92,14 +104,7 @@ import { LongPressModule } from 'ionic-long-press';
 And use in your template:
 
 ```html
-<button
-  ion-button
-  ion-long-press
-  [interval]="400"
-  (pressed)="pressed()"
-  (longPressed)="active()"
-  (pressEnded)="released()"
-></button>
+<button ion-button ion-long-press [interval]="400" (pressed)="pressed()" (longPressed)="active()" (pressEnded)="released()"></button>
 ```
 
 ### API
