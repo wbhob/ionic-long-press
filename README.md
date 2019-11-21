@@ -123,4 +123,4 @@ I have instated a 40ms interval limit to prevent poor performance. I recommend a
 
 ### Credits
 
-This plugin was originally developed by Wilson Hobbs in July 2017 with contributions from Robin Giel.
+This plugin was originally developed by Wilson Hobbs in July 2017 with contributions from the open source community. Original source code is available for free on GitHub: <https://github.com/wbhob/ionic-long-press>
