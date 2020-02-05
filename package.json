@@ -16,7 +16,7 @@
   "license": "MIT",
   "peerDependencies": {
     "@angular/core": "8.2.14",
-    "@ionic/angular": "4.11.5",
+    "@ionic/angular": ">=4",
     "@types/hammerjs": "^2.0.36",
     "hammerjs": "^2.0.8"
   },
