@@ -104,18 +104,19 @@ import { LongPressModule } from 'ionic-long-press';
 And use in your template:
 
 ```html
-<button ion-button ion-long-press [interval]="400" (pressed)="pressed()" (longPressed)="active()" (pressEnded)="released()"></button>
+<button ion-button ion-long-press [interval]="400" [disableVerticalPan]="true" (pressed)="pressed()" (longPressed)="active()" (pressEnded)="released()"></button>
 ```
 
 ### API
 
-| Item             | Description                                                                                       |
-| ---------------- | ------------------------------------------------------------------------------------------------- |
-| `ion-long-press` | Directive to include the press event outputs.                                                     |
-| `[interval]`     | Number. Allows you to set the interval at which the `longPressed` event will fire. Default `500`. |
-| `(pressed)`      | Event fired when the element is initially pressed.                                                |
-| `(longPressed)`  | Event fired on the specified interval when the element is being held.                             |
-| `(pressEnded)`   | Event fired when the element is released.                                                         |
+| Item                   | Description                                                                                       |
+| ---------------------- | ------------------------------------------------------------------------------------------------- |
+| `ion-long-press`       | Directive to include the press event outputs.                                                     |
+| `[interval]`           | Number. Allows you to set the interval at which the `longPressed` event will fire. Default `500`. |
+| `(pressed)`            | Event fired when the element is initially pressed.                                                |
+| `(longPressed)`        | Event fired on the specified interval when the element is being held.                             |
+| `(pressEnded)`         | Event fired when the element is released.                                                         |
+| `[disableVerticalPan]` | Boolean. Disables Vertical Pan event inputs.                                                      |
 
 ### Caveats
 

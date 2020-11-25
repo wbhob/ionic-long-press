@@ -10,6 +10,7 @@ import * as Hammer from 'hammerjs'
 })
 export class LongPressDirective implements OnInit, OnDestroy {
   @Input() interval: number
+  @Input() disableVerticalPan: boolean
 
   @Output() pressed: EventEmitter<any> = new EventEmitter()
   @Output() longPressed: EventEmitter<any> = new EventEmitter()
@@ -32,7 +33,7 @@ export class LongPressDirective implements OnInit, OnDestroy {
     }
 
     this._hammer = new Hammer.Manager(this.el, {
-      recognizers: [[Hammer.Pan, { direction: Hammer.DIRECTION_VERTICAL }], [Hammer.Press], [Hammer.Tap]],
+      recognizers: this.verticalPan()
     })
 
     this._hammer.on('pan', (e: any) => {
@@ -82,5 +83,12 @@ export class LongPressDirective implements OnInit, OnDestroy {
       this._hammer.destroy()
       this._hammer = null
     }
+  }
+
+  verticalPan(){
+    if (this.disableVerticalPan) {
+      return [[Hammer.Press], [Hammer.Tap]]
+    }
+    return [[Hammer.Pan, { direction: Hammer.DIRECTION_VERTICAL }], [Hammer.Press], [Hammer.Tap]]
   }
 }
