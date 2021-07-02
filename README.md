@@ -24,7 +24,7 @@ npm install --save hammerjs @types/hammerjs
 
 ```ts
 // in src/main.ts.
-import 'hammerjs'
+import 'hammerjs';
 ```
 
 #### Step 3
@@ -32,8 +32,8 @@ import 'hammerjs'
 Create an IonicGestureConfig.ts file in your utils folder and include this:
 
 ```ts
-import { Injectable } from '@angular/core'
-import { HammerGestureConfig } from '@angular/platform-browser'
+import { Injectable } from '@angular/core';
+import { HammerGestureConfig } from '@angular/platform-browser';
 
 /**
  * @hidden
@@ -42,7 +42,7 @@ import { HammerGestureConfig } from '@angular/platform-browser'
 @Injectable()
 export class IonicGestureConfig extends HammerGestureConfig {
   buildHammer(element: HTMLElement) {
-    const mc = new (<any>window).Hammer(element)
+    const mc = new (window as any).Hammer(element);
     if (window) {
       for (const eventName in this.overrides) {
         if (eventName) {
@@ -93,7 +93,7 @@ import { LongPressModule } from 'ionic-long-press';
 @NgModule({
     imports: [
         ...
-        LongPressModule
+        LongPressModule,
         ...
     ]
 })

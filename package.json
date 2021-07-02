@@ -12,44 +12,27 @@
   "scripts": {
     "build": "ng-packagr -p package.json"
   },
+  "peerDependencies": {
+    "@angular/core": "12.x",
+    "@ionic/angular": "5.x",
+    "@types/hammerjs": "2.x",
+    "hammerjs": "2.x"
+  },
   "author": "Wilson Hobbs",
   "license": "MIT",
-  "peerDependencies": {
-    "@angular/core": "8.2.14",
-    "@ionic/angular": ">=4",
-    "@types/hammerjs": "^2.0.36",
-    "hammerjs": "^2.0.8"
-  },
   "devDependencies": {
-    "@angular-devkit/core": "^8.3.19",
-    "@angular-devkit/schematics": "^8.3.19",
-    "@angular/common": "8.2.14",
-    "@angular/compiler": "^8.2.14",
-    "@angular/compiler-cli": "8.2.14",
-    "@angular/core": "8.2.14",
-    "@angular/forms": "^8.2.14",
-    "@angular/platform-browser": "^8.2.14",
-    "@angular/platform-browser-dynamic": "^8.2.14",
-    "@angular/router": "^8.2.14",
-    "@ionic/angular": "4.11.5",
     "@types/hammerjs": "^2.0.36",
-    "awesome-typescript-loader": "^5.2.1",
     "hammerjs": "^2.0.8",
-    "husky": "^3.1.0",
-    "ng-packagr": "5.7.1",
-    "prettier": "^1.19.1",
-    "pretty-quick": "^2.0.1",
-    "rxjs": "6.5.3",
-    "tsickle": "^0.37.1",
-    "typescript": "3.5.3",
-    "zone.js": "^0.9.1"
+    "ng-packagr": "^12.1.0",
+    "prettier": "^2.3.2",
+    "pretty-quick": "^3.1.1",
+    "typescript": "^4.3.5"
   },
   "ngPackage": {
     "lib": {
       "entryFile": "src/index.ts"
     }
   },
-  "dependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
